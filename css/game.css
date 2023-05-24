@@ -1,0 +1,67 @@
+/* CSS Code, den es für die Start Page braucht */
+
+/*
+TO-DO:
+
+- fix Form on mobile
+*/
+
+section img {
+    display: none;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+}
+
+input {
+    height: 50px;
+}
+
+input::placeholder{
+    color: black;
+}
+
+input[type="checkbox"] {
+    height: min-content;
+    grid-area: checkbox;
+}
+
+input[type="submit"] {
+    width: 100px;
+    justify-self: center;
+    grid-area: submit;
+}
+
+input[type="email"]{
+    grid-area: email;
+}
+
+
+section#game {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    #form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+        display: block;
+    }
+
+    form {
+        grid: 
+            "prename name"
+            "email email"
+            "checkbox checkbox"
+            "submit submit"
+            / 1fr 1fr;
+        column-gap: 20px;
+
+    }
+}

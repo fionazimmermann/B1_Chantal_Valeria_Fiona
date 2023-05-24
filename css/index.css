@@ -1,0 +1,48 @@
+/* CSS Code, den es für die Start Page braucht */
+
+
+#start {
+    background-image: url(../images/platzhalter.jpg);
+    background-size: cover;
+}
+
+.game {
+    width: 360px;
+}
+
+
+
+
+
+
+
+
+section#promotion {
+    display: flex;
+    flex-direction: column;
+}
+
+section#promotion img {
+    width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+    section#promotion {
+        flex-direction: row;
+    }
+
+    section#promotion img {
+        width: 50vw;
+    }
+
+
+
+    section#start #start-text {
+        padding-right: 50px;
+        margin-left: 50vw;
+        width: 45vw;
+    }
+}

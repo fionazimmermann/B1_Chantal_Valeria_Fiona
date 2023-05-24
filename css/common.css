@@ -1,0 +1,162 @@
+/* CSS Code, der für alle Web Pages gleich ist */
+
+/*
+TO-DO:
+
+- paddings
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Fonts */
+h1 {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.1em;
+  color: lightgrey;
+}
+
+p, a, input, label {
+  font-family: 'Montserrat', sans-serif;
+  color: lightgrey;
+  line-height: 1.5em;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  color: white;
+
+  scroll-behavior: smooth;
+
+}
+
+main {
+  margin-top: 100px;
+  height: calc(100vh - 200px); /* mandatory for snap to scroll */
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+
+section {
+  /* height: calc(100vh - 200px); */
+  /* height: calc(100vh - 100px); */
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+/* Nav */
+
+#topnav {
+  position: fixed;
+  width: 100vw;
+  background-color: rgb(56, 54, 54);
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  max-width: 1200px;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+height: 80%;
+}
+
+header #hamburger {
+  margin: 10px;
+}
+
+nav {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+ul li a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-visible {
+  display: block;
+}
+
+li a.active {
+  text-decoration: underline;
+}
+
+
+
+
+
+main {
+  flex-grow: 1;
+  background-color: #121212;
+}
+
+
+
+
+footer {
+  background-color:rgb(56, 54, 54);
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div {
+  text-align: center;
+}
+
+footer div * {
+  margin: 0;
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+  #topnav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100vw - 100px);
+    padding: 0 calc((100vw - 1200px)/2);
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li {
+    display: inline;
+    float: inline-end;
+  }
+}
