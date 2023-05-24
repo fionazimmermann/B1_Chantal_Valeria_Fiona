@@ -1,20 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TITEL_EINGEBEN</title>
+    <title>VELOVE</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./js/nav.js" defer></script>
+    <script src="js/slider.js" defer></script>
 </head>
 
-<body class="webpage">
-    <div class="header">header</div>
-    <div class="content">
-        content
+<body>
+    <div id="topnav">
+        <header>
+            <img class="logo" src="images/logo_weiss.png" alt="Logo VELOVE">
+            <i class="fa fa-bars" id="hamburger"></i>
+        </header>
+    
+        <nav id="mobile-nav">
+            <ul>
+                <li><a href="./index.html" class="active">Home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./game.html">Game</a></li>
+            </ul>
+        </nav>
     </div>
-    <div class="footer">footer</div>
+
+
+
+
+    <main>
+        <section id="start">
+            <div id="start-text"> <!--für Desktop ansicht-->
+                <h1>Hello</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quas ad natus fugit. Voluptatem autem, 
+                    quam architecto, adipisci perferendis perspiciatis possimus blanditiis corporis magni minus corrupti quaerat 
+                    quod doloribus dignissimos! Quae praesentium nulla excepturi illo
+                </p>
+            </div>
+            <div>
+                <a href="#">mehr Erfahren</a>
+                <!-- Pfeil nach Unten -->
+            </div>
+        </section>
+      
+
+        <section id="vorschau">
+            <h1>Kategorien</h1>
+              <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="images/produkt_city.jpg" style="width:10%">
+                 <div class="text">City-Bikes</div>
+                
+                </div>
+  
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="images/produkt_mtb.jpg" style="width:10%">
+                    <div class="text">Mountainbikes</div>
+                
+                 </div>
+  
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="images/produkt_renn.jpg" style="width:10%">
+                    <div class="text">Rennräder</div>
+                  
+                 </div>
+
+                 <div class="mySlides fade">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="images//produkt_gravel.jpg" style="width:10%">
+                    <div class="text">Gravel-Bikes</div>
+                   
+                 </div>
+  
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+
+
+
+        <section id="promotion">
+            <div>
+                <h1>Spielen und Gewinnen</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ullam autem minima culpa dolor. Voluptates 
+                    quaerat tenetur, asperiores hic explicabo velit ipsam, vero neque eos, repellendus quo debitis inventore saepe.
+                </p>    
+            </div>
+            <img class="game" src="images/platzhalter.jpg">
+        </section>
+    </main>
+
+
+    <footer>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur</p>
+            <a href="#">sit amet consectetur</a>
+        </div>
+    </footer>
 </body>
 
 
