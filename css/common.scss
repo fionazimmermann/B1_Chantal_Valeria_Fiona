@@ -1,0 +1,175 @@
+/* CSS Code, der für alle Web Pages gleich ist */
+
+/*
+TO-DO:
+
+- padding desktop
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Fonts */
+h1 {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.1em;
+  color:ä lightgrey;
+  margin-top: 0;
+}
+
+p, a, label, input, div {
+  font-family: 'Montserrat', sans-serif;
+  color: lightgrey;
+  line-height: 1.5em;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  color: white;
+  scroll-behavior: smooth;
+
+  #topnav {
+    position: fixed;
+    width: 100vw;
+    background-color: rgb(56, 54, 54);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 30px;
+
+    header {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        height: 65%;
+      }
+
+      #hamburger {
+        margin: 10px;
+      }
+    }
+
+    nav {
+      display: none;
+
+      ul {
+        list-style: none;
+
+        li {
+          width: 100vw;
+          height: 40px;
+          display: flex;
+          align-items: center;
+    
+          a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+
+            &.active {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      &.nav-visible {
+        display: block;
+      }
+    }
+  }
+  
+
+  main {
+    margin-top: 100px;
+    height: calc(100vh - 170px); /* mandatory for snap to scroll */
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y proximity;
+    // flex-grow: 1;
+    background-color: #121212;
+  
+
+    section {
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      scroll-snap-align: start;
+      padding: 50px 30px;
+    }
+  }
+
+
+  footer {
+    background-color:rgb(56, 54, 54);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      text-align: center;
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 900px) {
+  body {
+    #topnav {
+      flex-direction: row;
+      justify-content: space-between;
+      box-sizing: border-box; 
+      padding: 0 50px;
+  
+      #hamburger {
+        display: none;
+      }
+  
+      nav {
+        display: flex;
+        align-items: center;
+  
+        ul li {
+          display: inline;
+          float: inline-end;
+        }
+      }
+    
+    }
+  
+    section {
+      padding: 70px;
+    }
+  } 
+}
+
+
+@media screen and (min-width: 1200px) {
+  body {
+    #topnav {
+      padding: 0 calc((100vw - 1200px)/2);
+      box-sizing: content-box;
+    }
+  
+    section {
+      padding: 50px calc((100vw - 1200px)/2);
+    }
+    }
+}

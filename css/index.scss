@@ -1,0 +1,88 @@
+/* CSS Code, den es für die Start Page braucht */
+
+/*
+TO-DO:
+
+- section 3 padding
+*/
+
+#start {
+    background-image: url(../images/platzhalter.jpg);
+    background-size: cover;
+}
+
+.game {
+    width: 360px;
+}
+
+
+
+.slideshow-container{
+    height: calc(100% - 56px); //minus h1
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "left-arrow card right-arrow";
+    justify-content: center;
+    align-items: center;
+
+    .prev{
+        padding: 8px 16px;
+        grid-area: left-arrow;
+    
+    }
+    .next{
+        padding: 8px 16px;
+        grid-area: right-arrow;
+    }
+
+    .card {
+        // background-color: green;
+        grid-area: card;
+        height: 100%;
+
+        // p {
+        //     width:fit-content;
+        //     border: 2px solid red !important;
+        // }
+
+        img {
+            max-height: 70vh;
+            max-width: 70vw;
+        }
+    }
+}
+
+
+
+div#promotion {
+    display: flex;
+    flex-direction: column;
+
+    div#promotion-text {
+        margin-right: 20px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+    div#promotion {
+        flex-direction: row;
+
+        img {
+            width: calc(50vw - 10px);
+            margin-left: calc((100vw - 1200px)/-2);
+        }
+    }
+
+    div#start > #start-text {
+        padding-right: 50px;
+        margin-left: 50vw;
+        width: 45vw;
+    }
+}

@@ -1,48 +1,66 @@
+@charset "UTF-8";
 /* CSS Code, den es für die Start Page braucht */
+/*
+TO-DO:
 
-
+- section 3 padding
+*/
 #start {
-    background-image: url(../images/platzhalter.jpg);
-    background-size: cover;
+  background-image: url(../images/platzhalter.jpg);
+  background-size: cover;
 }
 
 .game {
-    width: 360px;
+  width: 360px;
 }
 
-
-
-
-
-
-
-
-section#promotion {
-    display: flex;
-    flex-direction: column;
+.slideshow-container {
+  height: calc(100% - 56px);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: "left-arrow card right-arrow";
+  justify-content: center;
+  align-items: center;
+}
+.slideshow-container .prev {
+  padding: 8px 16px;
+  grid-area: left-arrow;
+}
+.slideshow-container .next {
+  padding: 8px 16px;
+  grid-area: right-arrow;
+}
+.slideshow-container .card {
+  grid-area: card;
+  height: 100%;
+}
+.slideshow-container .card img {
+  max-height: 70vh;
+  max-width: 70vw;
 }
 
-section#promotion img {
-    width: 100%;
+div#promotion {
+  display: flex;
+  flex-direction: column;
 }
-
-
-
+div#promotion div#promotion-text {
+  margin-right: 20px;
+}
+div#promotion img {
+  width: 100%;
+}
 
 @media screen and (min-width: 900px) {
-    section#promotion {
-        flex-direction: row;
-    }
-
-    section#promotion img {
-        width: 50vw;
-    }
-
-
-
-    section#start #start-text {
-        padding-right: 50px;
-        margin-left: 50vw;
-        width: 45vw;
-    }
-}
+  div#promotion {
+    flex-direction: row;
+  }
+  div#promotion img {
+    width: calc(50vw - 10px);
+    margin-left: calc((100vw - 1200px) / -2);
+  }
+  div#start > #start-text {
+    padding-right: 50px;
+    margin-left: 50vw;
+    width: 45vw;
+  }
+}/*# sourceMappingURL=index.css.map */
