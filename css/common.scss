@@ -6,15 +6,24 @@ TO-DO:
 - padding desktop
 */
 
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/* Fonts */
+
 h1 {
   font-family: 'Anton', sans-serif;
+  font-size: 1.625em;
+  line-height: 1.53em;
   letter-spacing: 0.1em;
-  color:ä lightgrey;
+  color: white;
   margin-top: 0;
+}
+
+h4 {
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+  line-height: 1.25em;
 }
 
 p, a, label, input, div {
@@ -22,6 +31,14 @@ p, a, label, input, div {
   color: lightgrey;
   line-height: 1.5em;
 }
+
+/* Colors */
+$background: #121212;
+$shadow: #3D3E40;
+$font: white;
+$font-shadow: #E8E8E8;
+
+
 
 
 body {
@@ -36,7 +53,7 @@ body {
   #topnav {
     position: fixed;
     width: 100vw;
-    background-color: rgb(56, 54, 54);
+    background-color: $shadow;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -52,6 +69,10 @@ body {
 
       .logo {
         height: 65%;
+
+        img {
+          height: 100%;
+        }
       }
 
       #hamburger {
@@ -72,7 +93,7 @@ body {
           align-items: center;
     
           a {
-            color: white;
+            color: $font;
             padding: 14px 16px;
             text-decoration: none;
 
@@ -98,7 +119,7 @@ body {
     overflow-x: hidden;
     scroll-snap-type: y proximity;
     // flex-grow: 1;
-    background-color: #121212;
+    background-color: $background;
   
 
     section {
@@ -112,7 +133,7 @@ body {
 
 
   footer {
-    background-color:rgb(56, 54, 54);
+    background-color: $shadow;
     height: 70px;
     display: flex;
     justify-content: center;
@@ -120,6 +141,7 @@ body {
 
     div {
       text-align: center;
+      font-size: 0.8em;
 
       * {
         margin: 0;
@@ -131,6 +153,11 @@ body {
 
 
 @media screen and (min-width: 900px) {
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
   body {
     #topnav {
       flex-direction: row;
@@ -162,14 +189,17 @@ body {
 
 
 @media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 2.5em;
+  }
   body {
     #topnav {
       padding: 0 calc((100vw - 1200px)/2);
       box-sizing: content-box;
     }
   
-    section {
+    main section {
       padding: 50px calc((100vw - 1200px)/2);
     }
-    }
+  }
 }

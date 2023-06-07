@@ -1,28 +1,42 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+// TO-DO
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+/* - klick on circle
+   - klick on prev/next
+*/
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+const cards = document.getElementsByClassName("card");
+let currentCard = 0;
+let fields = [[3, "prev-picture"], [0, "current"], [1, "next-picture"]]
+
+const switchCards = (n) => {
+  //remove classes
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList = "card";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+
+  for (let i = 0; i < fields.length; i++) {
+    let currentPosition = fields[i][0] + n;
+
+    if (currentPosition >= cards.length) {
+      currentPosition = currentPosition - cards.length
+    } else if (currentPosition < 0) {
+      currentPosition = cards.length + currentPosition
+    };
+
+    fields[i][0] = currentPosition;
+    
+    cards[fields[i][0]].classList.add(fields[i][1]);
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+
+  // fill circles
+  const circles = document.getElementById("card-position-range").children;
+
+  for (let i = 0; i < circles.length; i++) {
+    circles[i].classList = "";
+  }
+
+  for (let i = 0; i < fields[1][0] + 1; i++) {
+    circles[i].classList.add("filled");
+  }
 }

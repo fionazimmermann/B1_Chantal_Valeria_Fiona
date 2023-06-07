@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.product.reverse {
+.product:nth-child(2n) {
   grid-template-areas: "description image";
 }
 
@@ -26,7 +26,7 @@
     -moz-column-gap: 20px;
          column-gap: 20px;
   }
-  .product, .product.reverse {
+  .product:nth-child(n) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "image" "description";

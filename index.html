@@ -15,7 +15,7 @@
 <body>
     <div id="topnav">
         <header>
-            <img class="logo" src="images/logo_weiss.png" alt="Logo VELOVE">
+            <a class="logo" href="index.html"><img src="images/logo_weiss.png" alt="Logo VELOVE"></a>
             <i class="fa fa-bars" id="hamburger"></i>
         </header>
     
@@ -34,14 +34,17 @@
     <main>
         <section id="start">
             <div id="start-text"> <!--für Desktop ansicht-->
-                <h1>Hello</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quas ad natus fugit. Voluptatem autem, 
-                    quam architecto, adipisci perferendis perspiciatis possimus blanditiis corporis magni minus corrupti quaerat 
-                    quod doloribus dignissimos! Quae praesentium nulla excepturi illo
+                <h1>Willkommen bei Velove! </h1>
+                <p>Möchten Sie die Welt auf zwei Räder entdecken? Bei uns finden Sie hochwertige Fahrräder. 
+                    Unser Sortiment umfasst eine Vielzahl von Fahrrädern führender Marken, die für ihre Qualität 
+                    und Zuverlässigkeit bekannt sind. Von robusten Mountainbikes über elegante Citybikes bis hin 
+                    zu aerodynamischen Rennrädern bieten wir Ihnen eine umfangreiche Auswahl, um Ihren individuellen 
+                    Bedürfnissen gerecht zu werden. Entdecken Sie die Freiheit, Flexibilität und Freude des Radfahrens 
+                    und machen Sie Ihren nächsten Ausflug zu einem unvergesslichen Erlebnis.
                 </p>
             </div>
             <div>
-                <a href="#">mehr Erfahren</a>
+                <a href="#vorschau">mehr Erfahren</a>
                 <!-- Pfeil nach Unten -->
             </div>
         </section>
@@ -49,12 +52,49 @@
 
         <section id="vorschau">
             <h1>Kategorien</h1>
-              <!-- Slideshow container -->
-            <div class="slideshow-container">
+                <div id="slider-grid-container">
+                        <div class="card current">
+                        <img src="images/produkt_city.jpg" alt="City-Bikes">
+                        <h4>City-Bikes</h4>
+                        <a href="shop.html">mehr entdecken</a>
+                    </div>
+                        <div class="card next-picture">
+                        <img src="images/produkt_mtb.jpg" alt="Mountainbikes">
+                        <h4>Mountainbikes</h4>
+                        <a href="shop.html">mehr entdecken</a>
+                    </div>
+                        <div class="card">
+                        <img src="images/produkt_renn.jpg" alt="Rennräder">
+                        <h4>Rennräder</h4>
+                        <a href="shop.html">mehr entdecken</a>
+                    </div>
+                    <div class="card prev-picture">
+                        <img src="images/produkt_gravel.jpg" alt="Gravel-Bikes">
+                        <h4>Gravel-Bikes</h4>
+                        <a href="shop.html">mehr entdecken</a>
+                    </div>
 
-                <!-- Full-width images with number and caption text -->
+                    <a id="prev" class="arrow-btn" onclick="switchCards(-1)">&#10094;</a>
+                    <a id="next" class="arrow-btn" onclick="switchCards(1)">&#10095;</a>
+                </div>
+
+                <div id="card-position-range">
+                    <div class="filled"></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+
+
+
+
+
+              <!-- Slideshow container -->
+<!--             <div class="slideshow-container">
+
                 <div class="mySlides fade card">
-                    <p>1/4</p>
+                    <p>1 / 4</p>
                     <img src="images/produkt_city.jpg" href="shop.html">
                     <p>City-Bikes</p>
                     <a href="shop.html">mehr entdecken</a>
@@ -70,7 +110,7 @@
   
                 <div class="mySlides fade card">
                     <p>3 / 4</p>
-                    <img src="images/produkt_renn.jpg" href="shop.html">
+                    <div id="placeholder"><img src="images/produkt_renn.jpg" href="shop.html"></div>
                     <p>Rennräder</p>
                     <a href="shop.html">mehr entdecken</a>
                   
@@ -84,10 +124,9 @@
                    
                  </div>
   
-                <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+            </div>-->
         </section>
 
 
@@ -96,11 +135,12 @@
             <div id="promotion">
                 <div id="promotion-text">
                     <h1>Spielen und Gewinnen</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ullam autem minima culpa dolor. Voluptates 
-                        quaerat tenetur, asperiores hic explicabo velit ipsam, vero neque eos, repellendus quo debitis inventore saepe.
+                    <p>Willkommen beim Velove-Gewinnspiel! Wir möchten unsere Kunden belohnen und Ihnen die Chance geben, 
+                        großartige Preise zu gewinnen. Sind Sie bereit, Ihr Glück zu versuchen?
                     </p>    
+                    <a href="game.html">zum Gewinnspiel</a>
                 </div>
-                <img class="game" src="images/platzhalter.jpg">
+                <img class="game" src="images/rennvelo.jpg">
             </div>
         </section>
     </main>
@@ -108,8 +148,8 @@
 
     <footer>
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-            <a href="#">sit amet consectetur</a>
+            <p>Valeria von Däniken, Chantal Kuster, Fiona Zimmermann</p>
+            <!-- <a href="#">sit amet consectetur</a> -->
         </div>
     </footer>
 </body>

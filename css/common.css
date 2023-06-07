@@ -5,14 +5,22 @@ TO-DO:
 
 - padding desktop
 */
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/* Fonts */
 h1 {
   font-family: "Anton", sans-serif;
+  font-size: 1.625em;
+  line-height: 1.53em;
   letter-spacing: 0.1em;
-  color: ä lightgrey;
+  color: white;
   margin-top: 0;
+}
+
+h4 {
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+  line-height: 1.25em;
 }
 
 p, a, label, input, div {
@@ -21,6 +29,7 @@ p, a, label, input, div {
   line-height: 1.5em;
 }
 
+/* Colors */
 body {
   display: flex;
   flex-direction: column;
@@ -33,7 +42,7 @@ body {
 body #topnav {
   position: fixed;
   width: 100vw;
-  background-color: rgb(56, 54, 54);
+  background-color: #3D3E40;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -49,6 +58,9 @@ body #topnav header {
 }
 body #topnav header .logo {
   height: 65%;
+}
+body #topnav header .logo img {
+  height: 100%;
 }
 body #topnav header #hamburger {
   margin: 10px;
@@ -93,7 +105,7 @@ body main section {
   padding: 50px 30px;
 }
 body footer {
-  background-color: rgb(56, 54, 54);
+  background-color: #3D3E40;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -101,12 +113,17 @@ body footer {
 }
 body footer div {
   text-align: center;
+  font-size: 0.8em;
 }
 body footer div * {
   margin: 0;
 }
 
 @media screen and (min-width: 900px) {
+  h1 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
   body #topnav {
     flex-direction: row;
     justify-content: space-between;
@@ -129,11 +146,14 @@ body footer div * {
   }
 }
 @media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 2.5em;
+  }
   body #topnav {
     padding: 0 calc((100vw - 1200px) / 2);
     box-sizing: content-box;
   }
-  body section {
+  body main section {
     padding: 50px calc((100vw - 1200px) / 2);
   }
 }/*# sourceMappingURL=common.css.map */
