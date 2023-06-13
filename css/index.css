@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* CSS Code, den es für die Start Page braucht */
+#start {
+  background-image: url(../images/Bild_Doku.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.game {
+  width: 360px;
+}
+
+#slider-grid-container {
+  display: grid;
+  grid-template-areas: "left-arrow current-card right-arrow";
+  grid-template-columns: 1fr 55vw 1fr;
+  align-items: center;
+  justify-content: center;
+}
+#slider-grid-container .card {
+  display: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#slider-grid-container .card.current {
+  display: block;
+  grid-area: current-card;
+}
+#slider-grid-container .card h4, #slider-grid-container .card a {
+  display: block;
+  text-align: center;
+}
+#slider-grid-container .card:hover {
+  transform: scale(1.1);
+}
+#slider-grid-container img {
+  width: 100%;
+  height: auto;
+}
+#slider-grid-container .arrow-btn {
+  justify-self: center;
+}
+#slider-grid-container .arrow-btn:hover {
+  cursor: pointer;
+}
+#slider-grid-container .arrow-btn#prev {
+  grid-area: left-arrow;
+}
+#slider-grid-container .arrow-btn#next {
+  grid-area: right-arrow;
+}
+
+#card-position-range {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+#card-position-range div {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#card-position-range div:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#card-position-range div.filled {
+  background-color: white;
+}
+
+div#promotion {
+  display: grid;
+  grid: "title" "img" "text"/100%;
+}
+div#promotion div#promotion-text {
+  order: 5;
+  margin-right: 20px;
+}
+div#promotion img {
+  width: 100%;
+  grid-area: img;
+}
+
+@media screen and (min-width: 650px) {
+  #slider-grid-container {
+    grid-template-columns: 1fr 45vw 1fr;
+  }
+}
+@media screen and (min-width: 900px) {
+  div#promotion {
+    grid: "title img" "text img"/1fr 1fr;
+    grid-template-rows: 75px auto;
+  }
+  div#promotion img {
+    width: calc(50vw - 10px);
+    margin-right: -30px;
+  }
+  div#start > #start-text {
+    padding-right: 50px;
+    margin-left: 50vw;
+    width: 45vw;
+  }
+  #slider-grid-container {
+    grid-template-areas: "prev-picture left-arrow current-card right-arrow next-picture";
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 1fr 35% 1fr 25%;
+  }
+  #slider-grid-container .card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #slider-grid-container .card img {
+    max-height: 50vh;
+    max-width: 100%;
+    width: auto;
+  }
+  #slider-grid-container .card.prev-picture, #slider-grid-container .card.next-picture {
+    display: block;
+  }
+  #slider-grid-container .card.prev-picture img, #slider-grid-container .card.next-picture img {
+    max-height: 40vh;
+  }
+  #slider-grid-container .card.prev-picture h4, #slider-grid-container .card.prev-picture a, #slider-grid-container .card.next-picture h4, #slider-grid-container .card.next-picture a {
+    display: none;
+  }
+  #slider-grid-container .card.prev-picture {
+    grid-area: prev-picture;
+    justify-self: right;
+  }
+  #slider-grid-container .card.next-picture {
+    grid-area: next-picture;
+    justify-self: left;
+  }
+  #slider-grid-container .card.current {
+    justify-self: center;
+  }
+  #slider-grid-container .arrow-btn {
+    font-size: 2em;
+    margin: 10px;
+  }
+  #slider-grid-container .arrow-btn#prev {
+    justify-self: right;
+  }
+  #slider-grid-container .arrow-btn#next {
+    justify-self: left;
+  }
+  #slider-grid-container .arrow-btn:hover {
+    transition: padding 0.2s ease;
+    padding: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  div#promotion img {
+    margin-right: calc((100vw - 1200px) / -2);
+  }
+}/*# sourceMappingURL=index.css.map */

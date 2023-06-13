@@ -1,0 +1,92 @@
+/* CSS Code, den es für die Start Page braucht */
+@import "colors.scss";
+
+
+
+section img {
+    display: none;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid: "prename"
+        "name"
+        "email"
+        "checkbox"
+        "submit"
+        / 1fr;        
+    row-gap: 20px;
+
+    input {
+        height: 50px;
+        padding: 1px 10px;
+        color: $background;
+
+        &::placeholder {
+            color: $background;
+        }
+
+        &[type="email"]{
+            grid-area: email;
+        }
+
+        &[type="checkbox"] {
+            height: min-content;
+            width: 15px;
+            height: 15px;
+        }
+
+        &[type="submit"] {
+            // width: 100px;
+            justify-self: center;
+            grid-area: submit;
+        }
+    }
+
+    #newsletter-checkbox {
+        grid-area: checkbox;
+
+        #hint {
+            color: $error;
+        }
+        
+        label span {
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+    #form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        #game-descriptions {
+            display: none;
+        }
+    
+        form {
+            grid: 
+                "prename name"
+                "email email"
+                "checkbox checkbox"
+                "submit submit"
+                / 1fr 1fr;
+            column-gap: 20px;
+        }    
+    }
+}
+
+#form.hidden, #game.hidden {
+    display: none;
+}
