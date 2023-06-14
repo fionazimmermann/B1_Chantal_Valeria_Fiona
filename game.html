@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VELOVE</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/tictactoe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="js/nav.js" defer></script>
+    <script src="js/tictactoe.js" defer></script>
+    <script src="js/databaseClient.js"></script>
+    <script src="js/form.js" defer></script>
+</head>
+
+<body>
+    <div id="topnav">
+        <header>
+            <a class="logo" href="index.html"><img src="images/logo_weiss.png" alt="Logo VELOVE"></a>
+            <i class="fa fa-bars" id="hamburger"></i>
+        </header>
+    
+        <nav id="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="game.html" class="active">Game</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <main>
+        <section id="form">
+            <img src="images/citybike.jpg">
+            <div id="game-description">
+                <h1>Spielen & Gewinnen</h1>
+                <p>Sie nehmen automatisch am Gewinnspiel teil, wenn Sie drei Mal hintereinander das TicTacToe gewinnen. 
+                    Das Ziel dabei ist es, drei Symbole in einer Reihe, Spalte oder Diagonale zu platzieren. Wenn Sie dies 
+                    schaffen, haben Sie gewonnen. Wenn alle Felder gefüllt sind und keiner eine Gewinnreihe hat, endet das 
+                    Spiel unentschieden. Versuchen Sie, Ihren Gegner zu blockieren, während Sie nach Möglichkeiten suchen, 
+                    selbst zu gewinnen. Viel Glück!  
+                </p>
+                <form action="" id="game-subscription">
+                    <input type="text" name="prename" id="prename" placeholder="Vorname" required>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <input type="email" name="email" id="email" placeholder="E-Mail" required>
+                    <div id="newsletter-checkbox">
+                        <input type="checkbox" name="newsletter" id="newsletter">
+                        <label for="newsletter">Ich möchte in Zukunft den Newsletter erhalten <span class="optional">(optional)</span></label>
+                        <p id="hint"></p>
+                    </div>
+                    <input type="submit" value="Spiel starten" id="start-button">
+                </form>
+            </div>
+
+        </section>
+        <section id="game" class="hidden">
+            <h1 class="title">Tic Tac Toe</h1>
+    
+            <!--Playground-->
+            <div class="tictactoe-container">
+                <div class="field" data-cell-index="0"></div>
+                <div class="field" data-cell-index="1"></div>
+                <div class="field" data-cell-index="2"></div>
+                <div class="field" data-cell-index="3"></div>
+                <div class="field" data-cell-index="4"></div>
+                <div class="field" data-cell-index="5"></div>
+                <div class="field" data-cell-index="6"></div>
+                <div class="field" data-cell-index="7"></div>
+                <div class="field" data-cell-index="8"></div>
+            </div>
+        
+            <div class="firstPlayer player" id="firstPlayer">
+                <h2 class="rubik active-player" id="firstPlayer-nickname">Vorname</h2> <!--nickname playerA, filled with js-->      
+                <p class="score">Score: <span id="firstPlayer-score">0</span></p> <!--symbol playerA-->
+            </div>
+        
+            <div class="secondPlayer player" id="secondPlayer">
+                <h2 class="rubik" id="secondPlayer-nickname">Computer</h2> <!--nickname playerB-->
+                <p class="score">Score: <span  id="secondPlayer-score">0</span></p> <!--symbol playerB-->
+            </div>
+            
+            <button id="restart-button" class="login-size button">nächste Runde</button>
+        
+        
+            <div class="modal card rubik" id="win">
+                <h2>Sieg</h2>
+                <h3></h3> <!--winnernickname-->
+            </div>
+        
+            <div class="modal card rubik" id="draw">
+                <h2>Unentschieden</h1>
+            </div>
+
+            <div class="modal card rubik" id="competition">
+                <h2>Gratulation</h1>
+                <p>Du hast das Spiel gewonnen und nimmst somit an der <br>Verlosung teil! Viel Glück!</p>
+                <a href="index.html">zurück zur Startseite</a>
+            </div>
+        
+        </section>
+    </main>
+
+
+    <footer>
+        <div>
+            <p>Valeria von Däniken, Chantal Kuster, Fiona Zimmermann</p>
+        </div>
+    </footer>
+</body>
+
+
+</html>
